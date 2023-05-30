@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Button from "./components/Button/Button";
+
+import Header from "./components/Header/Header";
+import ImageUpload from "./components/ImageUpload/ImageUpload";
+import InputBox from "./components/InputBox/InputBox";
+import PageHeader from "./components/PageHeader/PageHeader";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Header label={"Create Event"} />
+      <div className="body-container">
+        <PageHeader
+          title={"Event Details"}
+          description={"Enter event information below"}
+        />
+        <ImageUpload />
+        <InputBox label={"Event Title"} placeholder={"Enter event title"} />
+        <InputBox
+          label="Event Description"
+          placeholder={"Enter event description"}
+          size="large"
+        />
+        <InputBox
+          label={"Date and Time"}
+          placeholder={"Select date and time"}
+          icon={"cal"}
+        />
+        <Button label={"Create Event"} />
+      </div>
     </div>
   );
 }
